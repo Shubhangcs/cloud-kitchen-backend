@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
             CART_QUANTITY INT,
             USER_ID INT,
             FOOD_ID INT,
-            PRIMARY KEY(ORDER_ID , USER_ID),
+            PRIMARY KEY(CART_ID , USER_ID),
             FOREIGN KEY (USER_ID) REFERENCES USERDETAILS(USER_ID),
             FOREIGN KEY (FOOD_ID) REFERENCES FOODITEMS(FOOD_ID)
         )ENGINE=MyISAM;
