@@ -14,7 +14,4 @@ connection.connect((err) => {
   console.log("connected successfully");
 });
 
-connection.query("create database food_application");
-connection.query("use food_application");
-
 module.exports = connection;
