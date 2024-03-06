@@ -23,7 +23,6 @@ module.exports = router.get("/foodtable", foodTable);
 module.exports = router.get("/hoteltable", hotelTable);
 module.exports = router.get("/usertable", userTable);
 module.exports = router.get("/cart", cart);
-module.exports = router.get("/cartitems", cartItems);
 
 
 module.exports = router.post("/foodaddition", foodAddition);
