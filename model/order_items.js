@@ -3,7 +3,7 @@ const db = require("../database/db");
 module.exports = async (req , res , next) => {
   const cart = `
         CREATE TABLE ORDERITEMS(
-            ORDER_ID INT AUTO_INCREMENT,
+            ORDER_ID INT AUTO_INCREMENT PRIMARY KEY,
             ORDER_PRICE INT,
             ORDER_DATE DATE,
             USER_ID INT,
