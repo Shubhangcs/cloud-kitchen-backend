@@ -7,10 +7,8 @@ module.exports = async (req , res , next) => {
             ORDER_PRICE INT,
             ORDER_DATE DATE,
             USER_ID INT,
-            CART_ID INT,
             ADDRESS VARCHAR(300),
-            FOREIGN KEY (USER_ID) REFERENCES USERDETAILS(USER_ID),
-            FOREIGN KEY (CART_ID) REFERENCES CARTITEMS(CART_ID)
+            FOREIGN KEY (USER_ID) REFERENCES USERDETAILS(USER_ID)
         )ENGINE=MyISAM;
     `;
     db.query(cart, (error, result) => { 
