@@ -1,6 +1,7 @@
 const db = require('../database/db');
 
 module.exports = (req, res, next) => { 
+    const { userid } = req.body;
     const retriveCartItemsQuery = `SELECT 
     C.ORDER_PRICE,
     C.ORDER_QUANTITY,
@@ -19,10 +20,12 @@ FROM
 JOIN 
     FOODITEMS F ON C.FOOD_ID = F.FOOD_ID
 JOIN 
-    HOTELS H ON F.HOTEL_ID = H.HOTEL_ID;
+    HOTELS H ON F.HOTEL_ID = H.HOTEL_ID
+ WHERE USER_ID = ?     
+;
 `;
 
-    db.query(retriveCartItemsQuery, (error, result) => { 
+    db.query(retriveCartItemsQuery, [userid] ,(error, result) => { 
         if (error) { 
             res.status(500).json({status:false , message:error.message});
         }
