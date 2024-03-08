@@ -8,17 +8,17 @@ module.exports = (req, res, next) => {
          if (error) { 
              res.status(500).json({status:false , message:error.message});
          }
-         for (var i = 0; i < result["data"].length; i++) {
+         for (var i = 0; i < result.length; i++) {
            if (
-             result["data"][i]["USER_ID"] == userid &&
-             result["data"][i]["FOOD_ID"] == foodid
+             result[i]["USER_ID"] == userid &&
+             result[i]["FOOD_ID"] == foodid
            ) {
              const addDataQuery = `UPDATE CARTITEMS SET CART_PRICE = ? , CART_QUANTITY = ? WHERE USER_ID = ? AND FOOD_ID = ?`;
              db.query(
                addDataQuery,
                [
-                 price + result["data"][index]["CART_PRICE"],
-                 quantity + result["data"][index]["CART_QUANTITY"],
+                 price + result[index]["CART_PRICE"],
+                 quantity + result[index]["CART_QUANTITY"],
                  userid,
                  foodid,
                ],
