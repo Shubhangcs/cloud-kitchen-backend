@@ -34,5 +34,5 @@ module.exports = router.get("/hotels", displayAllHotels);
 module.exports = router.post("/foodcatogery", displayFoodOnCatogery);
 module.exports = router.post("/foodhotels", displayFoodOnHotels);
 module.exports = router.post("/addtocart", addItemsToCart);
-module.exports = router.get("/getcartitems", retriveCartItemsQuery);
+module.exports = router.post("/getcartitems", retriveCartItemsQuery);
 module.exports = router.post("/orderitems",orderItems);
