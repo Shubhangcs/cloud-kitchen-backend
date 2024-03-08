@@ -15,9 +15,6 @@ module.exports = (req, res, next) => {
                     if (result[i]['USER_ID'] == userid && result[i]['FOOD_ID'] == foodid) {
                         finalQuery = `UPDATE CARTITEMS SET CART_QUANTITY = ? , CART_PRICE = ? WHERE USER_ID = ? AND FOOD_ID = ?`;
                         itemList = [quantity+result[i]['CART_QUANTITY'] , price+result[i]['CART_PRICE'] , userid , foodid];
-                    } else { 
-                        finalQuery = `INSERT INTO CARTITEMS(CART_DATE , CART_PRICE , CART_QUANTITY , USER_ID , FOOD_ID) VALUES (?,?,?,?,?)`;
-                        itemList = [date , price , quantity , userid , foodid];
                     }
                 }
                 db.query(finalQuery, itemList, (error, message) => { 
