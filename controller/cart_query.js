@@ -8,8 +8,7 @@ module.exports = (req, res, next) => {
          if (error) {
              res.status(500).json({ status: false, message: error.message });
          }
-         console.log(result);
-         for (var i = 0; i < result.length; i++) {
+         for (var i = 0; i <= result.length; i++) {
            if (
              result[i]["USER_ID"] == userid &&
              result[i]["FOOD_ID"] == foodid
