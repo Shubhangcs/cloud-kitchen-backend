@@ -6,8 +6,8 @@ module.exports = (req, res, next) => {
      const retriveData = `SELECT  * FROM CARTITEMS`;
      for (var i = 0; i < retriveData["data"].length; i++) {
        if (
-         retriveData["data"][index]["USER_ID"] == userid &&
-         retriveData["data"][index]["FOOD_ID"] == foodid
+         retriveData["data"][i]["USER_ID"] == userid &&
+         retriveData["data"][i]["FOOD_ID"] == foodid
        ) {
          const addDataQuery = `UPDATE CARTITEMS SET CART_PRICE = ? , CART_QUANTITY = ? WHERE USER_ID = ? AND FOOD_ID = ?`;
          db.query(
