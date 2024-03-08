@@ -3,11 +3,11 @@ const db = require('../database/db');
 module.exports = (req, res, next) => { 
     const { userid } = req.body;
     const retriveCartItemsQuery = `SELECT 
-    C.ORDER_PRICE,
-    C.ORDER_QUANTITY,
+    C.CART_PRICE,
+    C.CART_QUANTITY,
     C.USER_ID,
     C.FOOD_ID,
-    C.ORDER_ID,
+    C.CART_ID,
     F.FOOD_NAME,
     F.FOOD_TYPE,
     F.FOOD_CATOGERY,
