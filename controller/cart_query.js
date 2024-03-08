@@ -5,9 +5,10 @@ module.exports = (req, res, next) => {
      const { price, quantity, userid, foodid, date } = req.body;
      const retriveData = `SELECT  * FROM CARTITEMS`;
      db.query(retriveData, (error, result) => { 
-         if (error) { 
-             res.status(500).json({status:false , message:error.message});
+         if (error) {
+             res.status(500).json({ status: false, message: error.message });
          }
+         console.log(result);
          for (var i = 0; i < result.length; i++) {
            if (
              result[i]["USER_ID"] == userid &&
