@@ -17,6 +17,7 @@ const displayFoodOnCatogery = require("../controller/display_food_catogery");
 const displayFoodOnHotels = require("../controller/display_food_hotels");
 const retriveCartItemsQuery = require("../controller/retrive_cart_items_query.js");
 const orderItems = require('../controller/order_items.js');
+const deleteFromCartItems = require('../controller/delete_item_from_cart.js');
 
 module.exports = router.get("/ordertable",orderTable);
 module.exports = router.get("/foodtable", foodTable);
@@ -35,4 +36,5 @@ module.exports = router.post("/foodcatogery", displayFoodOnCatogery);
 module.exports = router.post("/foodhotels", displayFoodOnHotels);
 module.exports = router.post("/addtocart", addItemsToCart);
 module.exports = router.post("/getcartitems", retriveCartItemsQuery);
-module.exports = router.post("/orderitems",orderItems);
+module.exports = router.post("/orderitems", orderItems);
+module.exports = router.post('/deletefromcart',deleteFromCartItems);
